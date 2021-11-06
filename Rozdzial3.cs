@@ -338,14 +338,13 @@ Dysponując monetami 1 zł, 2 zł, 5 zł sprawdź, na ile różnych sposobów mo
 wypłacić 10 zł. Napisz program, który wyświetli w oknie konsoli wszystkie możliwe 
 kombinacje.
 */
-            int x = 1, y = 2, z = 5;
-            int suma=0;
-            for (int i = 1; i <= 10; i++)
-            {
-                Console.Write(1 + " +");
-                suma += 1;
-            }
-            Console.WriteLine(" suma={0}", suma);
+            const int stala = 10;
+            for (int i = 0; i < stala; i++)
+                for (int j = 0; j < stala; j++)
+                    for (int k = 0; k < stala; k++)
+                        if (1 * i + j * 2 + k * 5 == 10)
+                            Console.WriteLine("1zl*{0} + 2zł*{1} + 5zł*{2}", i, j, k);
+
         }
     }
 }
