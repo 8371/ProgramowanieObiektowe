@@ -110,38 +110,10 @@ namespace ProgramowanieObiektowe5_6
                 klawisz = Console.ReadKey();
             } while (klawisz.Key != ConsoleKey.Escape);
         }
-        public static void rysuj(char wybor, int x)
-        {
-            for (int i = 0; i < x; i++)
-            {
-                for (int j = 0; j < x; j++)
-                    if (wybor == 'd')
-                        if ((i == 0 || i == x - 1) || (j == 0 || j == x - 1))
-                            Console.Write("*");
-                        else
-                            Console.Write(" ");
-                    else if (wybor == 'a')
-                    {
-                        if (i + 1 > j)
-                            Console.Write("*");
-                    }
-                    else if (wybor == 'b')
-                    {
-                        if (j + 1 > i)
-                            Console.Write("*");
-                    }
-                    else if (wybor == 'c')
-                    {
-                        if (j < i)
-                            Console.Write(" ");
-                        else
-                            Console.Write("*");
-                    }
-                Console.WriteLine();
-            }
-        }
+        
         private static void opcjaGwiazdki()
         {
+            Gwiazdki gwiazda = new Gwiazdki();
             Kalkulator kalkulator = new Kalkulator();
             ConsoleKeyInfo klawisz;
             do
@@ -149,11 +121,11 @@ namespace ProgramowanieObiektowe5_6
                 Console.Clear();
                 Console.WriteLine("Gwiazdki");
                 Console.Write("Podaj liczbe wierszy: ");
-                int x = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Podaj wybierz wariant (a, b, c, d):");
+                gwiazda.set_x = Convert.ToInt32(Console.ReadLine());
 
-                string wybor = Console.ReadLine();
-                rysuj(Convert.ToChar(wybor), x);
+                Console.Write("Podaj wybierz wariant (a, b, c, d):");
+                gwiazda.set_wybor = Console.ReadLine();
+                gwiazda.rysuj();
                 Console.WriteLine("Jesli chcesz wyjsc z programu\nwcisnij  ESC");
                 klawisz = Console.ReadKey();
             } while (klawisz.Key != ConsoleKey.Escape);
