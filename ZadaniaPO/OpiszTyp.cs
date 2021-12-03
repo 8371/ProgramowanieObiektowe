@@ -1,12 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Zadania_PO
 {
-    class opiszTyp
+    class Program
     {
         static string OpiszTyp()
         {
@@ -31,6 +27,14 @@ namespace Zadania_PO
         static string OpiszTyp(double a, double b)
         {
             return "Podwójny double: " + Convert.ToString(a) + ", " + Convert.ToString(b);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine(OpiszTyp());
+            Console.WriteLine(OpiszTyp(2));
+            Console.WriteLine(OpiszTyp(2, 2));
+            Console.WriteLine(OpiszTyp(2.3 , 9.100));
+            Console.WriteLine(OpiszTyp("Ala ma kota"));
         }
     }
 }
